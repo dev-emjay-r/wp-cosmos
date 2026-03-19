@@ -65,7 +65,7 @@
                   <?php $mission_data = get_post_meta(get_the_ID(), '_mission_data', true); ?>
                   <!-- 1 -->
                    <?php if (!empty($mission_data)) { ?>
-                  <div class="stat-card" data-aos="fade-left">
+                  <div class="stat-card" data-aos="fade-right">
                     <h5><span aria-hidden="true">📊</span> Mission Data</h5>
                     
                     <?php foreach ($mission_data as $row) { ?>
@@ -84,7 +84,7 @@
                   </div>
                   <?php } ?>
                   <!-- 2 -->
-                  <div class="stat-card" data-aos="fade-left">
+                  <div class="stat-card" data-aos="fade-right">
                     <h5><span aria-hidden="true">🔗</span> Quick Links</h5>
                     <div class="stat-row">
                       <h6>
