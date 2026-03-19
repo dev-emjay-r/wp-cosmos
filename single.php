@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
- <?php the_post(); ?>
+<?php the_post(); ?>
 
 <main>
     <!-- Main Article -->
@@ -52,14 +52,14 @@
         <div class="container">
             <!-- Wrapper -->
              <div
-              class="flex flex-col md:flex-row items-center justify-center gap-8 overflow-hidden"
+              class="flex flex-col md:flex-row items-center justify-center gap-8"
             >
             <!-- Left -->
              <div class="wp-block-content">
                 <?php the_content(); ?>
              </div>
               <!-- Right -->
-              <div class="sticky top-30 self-start shrink-0 w-full md:w-sm" >
+              <div class="top-30 self-start shrink-0 w-full md:w-sm sticky" >
                 <!-- Stat Cards -->
                 <div class="stat-wrapper">
                   <?php $mission_data = get_post_meta(get_the_ID(), '_mission_data', true); ?>
@@ -135,7 +135,6 @@
             <?php $related = new WP_Query([
                 'post_type'      => 'mission',
                 'posts_per_page' =>  3,
-
                 'post_status'    => ['active', 'upcoming'],
                 'post__not_in'   => [get_the_ID()],  // ← excludes current post
                 'orderby'        => 'rand',          // optional: random order

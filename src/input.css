@@ -284,7 +284,11 @@
     &::after {
       content: "";
       @apply absolute inset-0;
-      background: linear-gradient(to top, #0a0a0f 20%, transparent 80%);
+      background: linear-gradient(to top,
+        #0a0a0f 0%,      /* ← starts solid at bottom */
+            #0a0a0f 15%,     /* ← stays solid for a bit */
+            transparent 60% 
+       );
     }
 
     /* Push content above the overlay */
@@ -669,7 +673,9 @@
   .not-found__title {
     @apply flex flex-col justify-center items-center mb-8 gap-3;
     h1 {
+      
       @apply text-6xl md:text-9xl inline-block bg-linear-to-r from-primary to-starlight bg-clip-text text-transparent text-center font-space-grotesk md:w-3xl w-fit;
+      filter: drop-shadow(20px 0 40px var(--color-starlight));
     }
   }
   .not-found__destinations {
@@ -708,7 +714,68 @@
            top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
     animation: orbit-spin 20s linear infinite;
 }
-
+/* Planet */
+  .planet-wrap {
+    @apply hidden lg:block;
+    position: absolute;
+    right: 8%;
+    top: 50%;
+    transform: translateY(0%);
+    width: 260px; height: 260px;
+  }
+  .planet {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #1e2d45, #0d1628 60%, #080d1a);
+    box-shadow:
+      inset -30px -20px 60px rgba(0,0,0,0.7),
+      inset 15px 15px 40px rgba(30,50,80,0.3),
+      0 0 80px rgba(20,40,80,0.4);
+    position: relative;
+  }
+  /* Orbital rings */
+  .rings {
+    position: absolute;
+    inset: -40%;
+    border-radius: 50%;
+    border: 1px solid rgba(100,120,160,0.18);
+    animation: orbit-spin 20s linear infinite;
+  }
+  .rings::before {
+    content: '';
+    position: absolute;
+    inset: 12%;
+    border-radius: 50%;
+    border: 1px solid rgba(100,120,160,0.12);
+  }
+  .rings::after {
+    content: '';
+    position: absolute;
+    inset: 24%;
+    border-radius: 50%;
+    border: 1px solid rgba(100,120,160,0.08);
+  }
+  /* Small red dot satellite */
+  .dot {
+    @apply bg-starlight;
+    position: absolute;
+    z-index: 1;
+    top: 40%;
+    right: -2%;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    
+    box-shadow: 0 0 12px var(--red);
+    animation: dot-pulse 2.5s ease-in-out infinite;
+  }
+  @keyframes orbit-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  @keyframes dot-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
 }
 @layer utilities {
 

@@ -62,7 +62,7 @@
           options: {
             background: {
               image:
-                "radial-gradient(ellipse 60% 80% at center, #1a1a2e 0%, #0a0a0f 80%)",
+                "radial-gradient(ellipse 60% 60% at 50% 100%, #0f3460 0%, #0a0a0f 80%)",
               size: "cover",
               repeat: "no-repeat",
             },

@@ -12,7 +12,7 @@
                     <span class="text-glow area-glow">🧑‍🚀</span>
                 </div>
                 <div class="not-found__title">
-                    <h1 class="text-glow">404</h1>
+                    <h1 class="">404</h1>
                     <p class="font-semibold">Houston, We Have a Problem</p>
                     <p class=" text-secondary/80 text-center">The page you're looking for has drifted into deep space. It might have been moved, deleted, or never existed in this universe.</p>
                 </div>

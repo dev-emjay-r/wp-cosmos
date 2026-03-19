@@ -4,6 +4,12 @@
     <section class="py-50 min-h-fit w-full overflow-hidden">
       <div id="tsparticles"></div>
       <div class="container">
+        <!-- Planet -->
+        <div class="planet-wrap">
+          <div class="rings"><div class="dot"></div></div>
+          <div class="planet"></div>
+          
+        </div>
         <!-- Wrapper -->
         <div class="flex flex-col items-center justify-center">
           <!-- Explore the unknown -->
@@ -53,7 +59,7 @@
       <div class="container">
         
         <div
-          class="flex md:flex-row flex-col gap-8 justify-center items-center"
+          class="flex lg:flex-row flex-col gap-8 justify-center items-center"
         >
         <?php
         $stats = new WP_Query([

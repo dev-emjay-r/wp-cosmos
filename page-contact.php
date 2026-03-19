@@ -61,7 +61,9 @@
               </ul>
             </div>
             <!-- Contact Forms -->
-            <div class="contact__forms" data-aos="fade-left" data-aos-duration="900">
+            <div data-aos="fade-down" data-aos-duration="900" class="overflow-hidden">
+              
+            <div class="contact__forms" >
               <form action="">
                 <label for="name">Full Name</label>
                 <input
@@ -98,6 +100,8 @@
                 <button type="submit" class="btn btn-glow w-full mt-8">Send Message <span>🚀</span></button>
               </form>
             </div>
+            </div>
+            
           </div>
         </div>
       </div>
